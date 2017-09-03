@@ -73,13 +73,18 @@ def full_board_check(board):
 # Step 8: Write a function that asks for a player's next position (as a number 1-9) and then uses the function from 
 #step 6 to check if its a free position. If it is, then return the position for later use.
 def player_choice(board):
-    pass
+    position = ' '
+
+    while position not in '1 2 3 4 5 6 7 8 9'.split() or not space_check(board, int(position)):
+        position = raw_input('Choose your next position (1-9)')
+
+    return int(position)
 
 # Step 9: Write a function that asks the player if they want to play again and returns a boolean True if they do want 
 #to play again.
 def replay():
     
-    pass
+    return raw_input('Do you want to play again? Enter Yes or No').lower().startswith(y)
 
 # Step 10: Here comes the hard part! Use while loops and the functions you've made to run the game!
 print('Welcome to Tic Tac Toe!')
