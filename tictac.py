@@ -1,8 +1,10 @@
 from __future__ import print_function 
+import random
+from IPython.display import clear_output
 
 # Step 1: Write a function that can print out a board. Set up your board as a list, where each index 1-9 corresponds with 
 #a number on a number pad so you get a 3 by 3 board representation.
-from IPython.display import clear_output
+
 def display_board(board):
     clear_output()
     print('   |   |')
@@ -46,12 +48,14 @@ def win_check(board,mark):
     (board[7] == mark and board[5] == mark and board[3] == mark) or # diagonal
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
     #if 1,2,3 == x or 4,5,6 ==x, or 7,8,9 == x or 1,4,6 or 3, 5, 7
-    pass
 
 #  Step 5: Write a function that uses the random module to randomly decide which player goes first.
-import random
 def choose_first():
-    pass
+    def choose_first():
+        if random.randint(0,1) == 0:
+            return 'Player 1'
+        else:
+            return 'Player 2'
 
 # Step 6: Write a function that returns a boolean indicating whether a space on the board is freely available.
 def space_check(board, position):
