@@ -19,7 +19,9 @@ def display_board(board):
 
 # Step 2: Write a function that can take in a player input and assign their marker as 'X' or 'O'
 def player_input():
-    
+    marker = ''
+    while not (marker == 'X' or marker == 'O'):
+        marker = raw_input("Player 1: Do you want to be X or O?").upper()
     pass
 
 #Step 3: Write a function that takes, in the board list object, a marker ('X' or 'O'), and a desired position 
