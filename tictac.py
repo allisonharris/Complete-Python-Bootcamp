@@ -22,12 +22,17 @@ def player_input():
     marker = ''
     while not (marker == 'X' or marker == 'O'):
         marker = raw_input("Player 1: Do you want to be X or O?").upper()
-    pass
+
+        if marker == 'X':
+            return ('X', 'O')
+
+        else:
+            return ('O', 'X')
 
 #Step 3: Write a function that takes, in the board list object, a marker ('X' or 'O'), and a desired position 
 #(number 1-9) and assigns it to the board
 def place_marker(board, marker, position):
-    pass
+    board[position] = marker 
 
 # Step 4: Write a function that takes in a board and a mark (X or O) and then checks to see if that mark has won.
 def win_check(board,mark):
